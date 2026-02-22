@@ -1,0 +1,21 @@
+body {
+  min-height: 100vh;
+}
+
+.table td,
+.table th {
+  white-space: nowrap;
+}
+
+.card {
+  border-radius: 0.75rem;
+}
+
+.list-group-item {
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.pagy-bootstrap-nav {
+  margin-top: 1rem;
+}

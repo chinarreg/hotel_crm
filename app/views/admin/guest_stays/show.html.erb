@@ -1,0 +1,7 @@
+<h1 class="h4"><%= @guest_stay.full_name %></h1>
+<p><strong>Phone:</strong> <%= @guest_stay.phone %></p>
+<p><strong>Email:</strong> <%= @guest_stay.email %></p>
+<p><strong>Check-in:</strong> <%= @guest_stay.checkin_date %></p>
+<p><strong>Check-out:</strong> <%= @guest_stay.checkout_date %></p>
+<p><strong>Source File:</strong> <%= @guest_stay.source_file %></p>
+<p><strong>Imported At:</strong> <%= l(@guest_stay.imported_at, format: :long) %></p>

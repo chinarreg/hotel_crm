@@ -1,0 +1,16 @@
+---
+0.6.0 mailfactory:>= 1.2.3,ruport:>= 0.11.0,scruffy:>= 0.2.2|checksum:75e5c5b9b85978dd53f05517585eafac3dbc0742597149add609d416976488fb,ruby:> 0.0.0
+0.7.0 mailfactory:>= 1.2.3,ruport:>= 0.11.0,scruffy:>= 0.2.2|checksum:e7a94b6f7a70362113b4b4999c296b9ffc83b3436298f88f2f61aff6c729d77c,ruby:> 0.0.0
+0.7.1 mailfactory:>= 1.2.3,rubyzip:>= 0.9.1,ruport:>= 0.11.0,scruffy:>= 0.2.2|checksum:8925ed509769aac51349bb23dc12bcea805f68bc7a84cc625f6e80fa7aef2846,ruby:> 0.0.0
+0.7.2 mailfactory:>= 1.2.3,rubyzip:>= 0.9.1,ruport:>= 0.11.0,scruffy:>= 0.2.2|checksum:95c691291b3052c749992345e7fb32529f5ad0b994b0543a19f04ce97853f9de,ruby:> 0.0.0
+0.8.0 mailfactory:>= 1.2.3,rubyzip:>= 0.9.1,ruport:>= 1.2.0,scruffy:>= 0.2.2|checksum:af2baead4a253d70b4b726eecd9da536d9e3f5c7ffdc4c3fa57911d6bc823372,ruby:> 0.0.0
+0.9.0 mailfactory:>= 1.2.3,rubyzip:>= 0.9.1,ruport:>= 1.2.2|checksum:12a4372927814adbe219d9f20697327567bc2eb9057cfe5802a8c3351f880803,ruby:> 0.0.0
+0.12.0 mailfactory:>= 1.2.3,rubyzip:>= 0.9.1,ruport:>= 1.2.3|checksum:dd28d9e0a18b6e0346bdee944b8a5d8a3d8f7d7001ecfe4e19070c9d4e3fe580,ruby:> 0.0.0
+0.13.0 mailfactory:>= 1.2.3,rubyzip:>= 0.9.1,ruport:>= 1.4.0|checksum:1fae62b98e2ec7a6156da03c93ff9f7f67f8903072e79d9a87b229aae0c3703b,ruby:> 0.0.0
+0.14.0 mailfactory:>= 1.2.3,rubyzip:>= 0.9.1,ruport:>= 1.6.0|checksum:06a016bcfac44175de842dae33287fa72a41783ffe5b6eb6579de3eebb3102ed,ruby:> 0.0.0
+0.2.0 mailfactory:>= 1.2.3,ruport:>= 0.9.3,scruffy:>= 0.2.2|checksum:e4846c157deb23835bb09c57cb8b47fb014e641fac37585a8d1620dd208993c3,ruby:> 0.0.0
+0.3.0 mailfactory:>= 1.2.3,ruport:>= 0.9.3,scruffy:>= 0.2.2|checksum:a32ca1c7121bc45be2754d74c77f1d3daf046fd1fd7b6f18f5ecc03203479ae5,ruby:> 0.0.0
+0.4.0 mailfactory:>= 1.2.3,ruport:>= 0.9.3,scruffy:>= 0.2.2|checksum:91c310c0e45d5b4006c6be333c49f471d9eb794b4f3ab2367dd916cd1ac41d20,ruby:> 0.0.0
+0.5.0 mailfactory:>= 1.2.3,ruport:>= 0.11.0,scruffy:>= 0.2.2|checksum:f511e006ee8f4878fcb7d772e28ed0bf497a46934fbc531fe5cba3cdcb56cc43,ruby:> 0.0.0
+0.1.0 ruport:>= 0.9.3,scruffy:>= 0.2.2|checksum:6b24c6cd04bf7834755f2650c46fce8afde24da3f89764160ba471fd0689826b,ruby:> 0.0.0
+0.10.0 mailfactory:>= 1.2.3,rubyzip:>= 0.9.1,ruport:>= 1.2.3|checksum:8c85c5efac5ea49624793297b5040141e445dc7b271b9f89d297096cf945b567,ruby:> 0.0.0

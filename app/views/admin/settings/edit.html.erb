@@ -1,0 +1,20 @@
+<h1 class="h4 mb-3">Admin Settings</h1>
+<%= form_with url: admin_settings_path, method: :patch, scope: :settings, class: "row g-3" do |f| %>
+  <% AppSetting::KEYS.each do |key| %>
+    <div class="col-12 col-lg-6">
+      <%= f.label key, key.humanize, class: "form-label" %>
+      <% if key == "csv_mapping_json" %>
+        <%= f.text_area key, value: @settings[key], class: "form-control", rows: 6 %>
+      <% elsif AppSetting.sensitive_key?(key) %>
+        <%= f.password_field key, value: "", class: "form-control", placeholder: AppSetting.masked_value_for(key) %>
+        <div class="form-text">Leave blank to keep the existing secret.</div>
+      <% else %>
+        <%= f.text_field key, value: @settings[key], class: "form-control" %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="col-12">
+    <%= f.submit "Save Settings", class: "btn btn-primary" %>
+  </div>
+<% end %>

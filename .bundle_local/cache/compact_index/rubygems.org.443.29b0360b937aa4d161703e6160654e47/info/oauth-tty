@@ -1,0 +1,8 @@
+---
+1.0.0 version_gem:~> 1.1|checksum:87c6eaea646f41da168a47f0d2d0cf370a791d0186eb4108b652fe3cafe1066e,ruby:>= 2.7.0
+1.0.1 version_gem:~> 1.1|checksum:be23d9ac9d3e370592801536fab5374389b76ac5bdd07b7135c3ed8fe84dbe73,ruby:>= 2.7.0
+1.0.2 version_gem:~> 1.1|checksum:7b48e7ca649233a5a6ebbce629964c879cbcd4b77e6f31b18ad2e93963723d18,ruby:>= 2.7.0
+1.0.3 version_gem:~> 1.1|checksum:a564575455a1b6ad421d56612036aba56cbdd78553137f630de80e27d08f55d6,ruby:>= 2.7.0
+1.0.4 version_gem:>= 1.1.1&~> 1.1|checksum:d4c135e6773fc7747d38e1af60f4ced100aa8f328bbf1dc70c5ca376afcc8446,ruby:>= 2.7.0
+1.0.5 version_gem:>= 1.1.1&~> 1.1|checksum:34e25c307da4509d4deec266ff3690bbf42e391355f496201c029268862d8b17,ruby:>= 2.7.0
+1.0.6 version_gem:>= 1.1.9&~> 1.1|checksum:9e8bd1861d367cce18318d8f214f2e1a1d7cb3898de0a9ea79162b4fdecb3152,ruby:>= 2.3.0

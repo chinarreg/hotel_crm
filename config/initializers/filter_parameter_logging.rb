@@ -1,0 +1,20 @@
+Rails.application.config.filter_parameters += [
+  :passw,
+  :email,
+  :secret,
+  :token,
+  :_key,
+  :crypt,
+  :salt,
+  :certificate,
+  :otp,
+  :ssn,
+  :cvv,
+  :cvc,
+  :encrypted_value,
+  :whatsapp_api_key,
+  :whatsapp_phone_id,
+  :imap_username,
+  :imap_password,
+  :settings
+]

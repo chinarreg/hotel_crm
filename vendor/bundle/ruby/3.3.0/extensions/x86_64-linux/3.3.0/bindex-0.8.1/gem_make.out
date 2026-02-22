@@ -1,0 +1,18 @@
+current directory: /home/dispatchtrack/personal/hotel_crm/vendor/bundle/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+/home/dispatchtrack/.rvm/rubies/ruby-3.3.9/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/dispatchtrack/personal/hotel_crm/vendor/bundle/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260222-1510723-i4aw4r sitelibdir\=./.gem.20260222-1510723-i4aw4r clean
+
+current directory: /home/dispatchtrack/personal/hotel_crm/vendor/bundle/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260222-1510723-i4aw4r sitelibdir\=./.gem.20260222-1510723-i4aw4r
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/dispatchtrack/personal/hotel_crm/vendor/bundle/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260222-1510723-i4aw4r sitelibdir\=./.gem.20260222-1510723-i4aw4r install
+/usr/bin/install -m 0755 cruby.so ./.gem.20260222-1510723-i4aw4r/skiptrace/internal
+
+current directory: /home/dispatchtrack/personal/hotel_crm/vendor/bundle/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260222-1510723-i4aw4r sitelibdir\=./.gem.20260222-1510723-i4aw4r clean

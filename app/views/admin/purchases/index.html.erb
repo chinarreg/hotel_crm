@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h1 class="h4 mb-0">Purchases</h1>
+  <%= link_to "New Purchase", new_admin_purchase_path, class: "btn btn-primary" %>
+</div>
+
+<%= form_with url: admin_purchases_path, method: :get, local: true, class: "row g-2 mb-3" do |f| %>
+  <div class="col-12 col-md-7"><%= f.text_field :q, value: params[:q], class: "form-control", placeholder: "Search member name" %></div>
+  <div class="col-6 col-md-3"><%= f.select :payment_mode, options_for_select([["All modes", ""]] + Purchase.payment_modes.keys.map { |s| [s.humanize, s] }, params[:payment_mode]), {}, class: "form-select" %></div>
+  <div class="col-6 col-md-2 d-grid"><%= f.submit "Filter", class: "btn btn-outline-secondary" %></div>
+<% end %>
+
+<div class="table-responsive">
+  <table class="table table-striped align-middle">
+    <thead><tr><th>Member</th><th>Amount</th><th>Date</th><th>Payment Mode</th><th></th></tr></thead>
+    <tbody>
+      <% @purchases.each do |purchase| %>
+        <tr>
+          <td><%= purchase.member.full_name %></td>
+          <td><%= number_to_currency(purchase.amount) %></td>
+          <td><%= purchase.purchased_on %></td>
+          <td><%= purchase.payment_mode %></td>
+          <td class="text-end"><%= link_to "View", admin_purchase_path(purchase), class: "btn btn-sm btn-outline-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%== simple_pagination(@pagination) if @pagination %>

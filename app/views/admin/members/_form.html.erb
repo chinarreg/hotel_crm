@@ -1,0 +1,10 @@
+<%= form_with model: [:admin, @member], class: "row g-3" do |f| %>
+  <div class="col-12 col-md-6"><%= f.label :full_name, class: "form-label" %><%= f.text_field :full_name, class: "form-control", required: true %></div>
+  <div class="col-12 col-md-6"><%= f.label :membership_number, class: "form-label" %><%= f.text_field :membership_number, class: "form-control", required: true %></div>
+  <div class="col-12 col-md-6"><%= f.label :phone, class: "form-label" %><%= f.telephone_field :phone, class: "form-control" %></div>
+  <div class="col-12 col-md-6"><%= f.label :email, class: "form-label" %><%= f.email_field :email, class: "form-control" %></div>
+  <div class="col-12 col-md-4"><%= f.label :membership_start_date, class: "form-label" %><%= f.date_field :membership_start_date, class: "form-control", required: true %></div>
+  <div class="col-12 col-md-4"><%= f.label :membership_expiry_date, class: "form-label" %><%= f.date_field :membership_expiry_date, class: "form-control", required: true %></div>
+  <div class="col-12 col-md-4"><%= f.label :status, class: "form-label" %><%= f.select :status, Member.statuses.keys, {}, class: "form-select" %></div>
+  <div class="col-12"><%= f.submit class: "btn btn-primary" %></div>
+<% end %>

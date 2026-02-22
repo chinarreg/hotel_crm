@@ -1,0 +1,19 @@
+current directory: /home/dispatchtrack/personal/hotel_crm/vendor/bundle/ruby/3.3.0/gems/debug-1.11.1/ext/debug
+/home/dispatchtrack/.rvm/rubies/ruby-3.3.9/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/dispatchtrack/personal/hotel_crm/vendor/bundle/ruby/3.3.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260222-1510723-mat625 sitelibdir\=./.gem.20260222-1510723-mat625 clean
+
+current directory: /home/dispatchtrack/personal/hotel_crm/vendor/bundle/ruby/3.3.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260222-1510723-mat625 sitelibdir\=./.gem.20260222-1510723-mat625
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/dispatchtrack/personal/hotel_crm/vendor/bundle/ruby/3.3.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260222-1510723-mat625 sitelibdir\=./.gem.20260222-1510723-mat625 install
+/usr/bin/install -m 0755 debug.so ./.gem.20260222-1510723-mat625/debug
+
+current directory: /home/dispatchtrack/personal/hotel_crm/vendor/bundle/ruby/3.3.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260222-1510723-mat625 sitelibdir\=./.gem.20260222-1510723-mat625 clean

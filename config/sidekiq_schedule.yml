@@ -1,0 +1,5 @@
+imap_fetch_job:
+  class: ImapFetchJob
+  queue: imports
+  cron: "0 * * * *"
+  description: "Fetch unread IMAP emails and enqueue CSV imports hourly"

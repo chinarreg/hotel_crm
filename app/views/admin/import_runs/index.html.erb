@@ -1,0 +1,25 @@
+<h1 class="h4 mb-3">Import Runs</h1>
+
+<%= form_with url: admin_import_runs_path, method: :get, local: true, class: "row g-2 mb-3" do |f| %>
+  <div class="col-12 col-md-10"><%= f.select :status, options_for_select([["All status", ""]] + ImportRun.statuses.keys.map { |s| [s.humanize, s] }, params[:status]), {}, class: "form-select" %></div>
+  <div class="col-12 col-md-2 d-grid"><%= f.submit "Filter", class: "btn btn-outline-secondary" %></div>
+<% end %>
+
+<div class="table-responsive">
+  <table class="table table-striped align-middle">
+    <thead><tr><th>Source File</th><th>Status</th><th>Processed</th><th>Failed</th><th>Started</th><th></th></tr></thead>
+    <tbody>
+      <% @import_runs.each do |run| %>
+        <tr>
+          <td><%= run.source_file %></td>
+          <td><span class="badge text-bg-secondary"><%= run.status %></span></td>
+          <td><%= run.processed_rows %></td>
+          <td><%= run.failed_rows %></td>
+          <td><%= run.started_at&.strftime("%Y-%m-%d %H:%M") %></td>
+          <td class="text-end"><%= link_to "View", admin_import_run_path(run), class: "btn btn-sm btn-outline-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%== simple_pagination(@pagination) if @pagination %>

@@ -1,0 +1,4 @@
+---
+0.0.2 hoe:>= 1.2.0|checksum:bfae407219bc70799cd3e691913c5c848ebf294841aa580e8f344374affdb9d0,ruby:> 0.0.0
+0.0.3 hoe:>= 1.2.0|checksum:babf31a4c399103a5ca6d196ddeffd66eabdbbf0014a7c3c31b643ca1a02190e,ruby:> 0.0.0
+0.0.4 builder:>= 2.1.2,hoe:>= 1.2.1|checksum:7b15af9f2255b9262f4eaeb686e0cde6e94a6074a1b8f5ab639e9249dc5dec16,ruby:> 0.0.0

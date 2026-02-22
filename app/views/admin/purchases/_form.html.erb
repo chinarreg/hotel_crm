@@ -1,0 +1,7 @@
+<%= form_with model: [:admin, @purchase], class: "row g-3" do |f| %>
+  <div class="col-12 col-md-6"><%= f.label :member_id, class: "form-label" %><%= f.collection_select :member_id, Member.order(:full_name), :id, :full_name, {}, class: "form-select" %></div>
+  <div class="col-12 col-md-6"><%= f.label :amount, class: "form-label" %><%= f.number_field :amount, class: "form-control", step: 0.01, required: true %></div>
+  <div class="col-12 col-md-6"><%= f.label :purchased_on, class: "form-label" %><%= f.date_field :purchased_on, class: "form-control", required: true %></div>
+  <div class="col-12 col-md-6"><%= f.label :payment_mode, class: "form-label" %><%= f.select :payment_mode, Purchase.payment_modes.keys, {}, class: "form-select" %></div>
+  <div class="col-12"><%= f.submit class: "btn btn-primary" %></div>
+<% end %>

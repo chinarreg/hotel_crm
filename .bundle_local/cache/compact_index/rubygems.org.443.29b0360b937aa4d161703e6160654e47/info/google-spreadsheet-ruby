@@ -1,0 +1,15 @@
+---
+0.0.8 |checksum:61f1ea1723963ac13fde20ab3b21d5baf22c08c6446a04cf612f9dea8880be12
+0.0.9 |checksum:a73795373a16c2e20456ddb34c43c8dce55b206f5f8c8be92b9212032eb254c1
+0.1.0 |checksum:9e3115694433654a2c2725303c38e8e12dc6e3d49079897c9cbf4e685ea1ac2b
+0.1.1 hpricot:>= 0.3,oauth:>= 0.3.6|checksum:5cfc76bd9cc296439b2a73afbc1a785b6c3a747d7c8a77bc8294477988fd6fba
+0.1.2 nokogiri:>= 1.4.3.1,oauth:>= 0.3.6|checksum:f79e0ad36ef3445e7a926c8004f9dd9535e3d32074e3e95f7ec0bff2baae9a59
+0.1.3 nokogiri:>= 1.4.3.1,oauth:>= 0.3.6|checksum:cddc308acfb6513295b87292563831c4c88e3ef6c2293e5d2161c86c004b721e
+0.1.4 nokogiri:>= 1.4.3.1,oauth:>= 0.3.6|checksum:74512f66f2e3e3882ab8b95e1912c9fb2d2c00a41d0956613a71dfa8dfb35fc8
+0.1.5 nokogiri:>= 1.4.3.1,oauth:>= 0.3.6|checksum:a4fe9568a5f7b81cc5340fc688d9b64ff7079cacb2bcde9728566370ace61d1e
+0.1.6 nokogiri:>= 1.4.3.1,oauth:>= 0.3.6,oauth2:>= 0.5.0|checksum:fe261a6fbaec3eb64f6207fb7109c885323c7702d019f8ceb322ba99cf113b54
+0.1.7 nokogiri:>= 1.4.3.1,oauth:>= 0.3.6,oauth2:>= 0.5.0|checksum:28d2b32212890d592dad829f13d586fe8c32972d11067c8a3e9fe696a332931f
+0.1.8 nokogiri:>= 1.4.3.1,oauth:>= 0.3.6,oauth2:>= 0.5.0|checksum:7c7839b65397f9ca774ed34d03453b3a7bd5f9bf4269a88a21fb20ecaee551c8
+0.2.1 nokogiri:!= 1.5.1&!= 1.5.2&>= 1.4.4,oauth:>= 0.3.6,oauth2:>= 0.5.0|checksum:18c16fe10b689957b40e96d94ccc841e23d15c4d1e94c4c61a252bc8f6b57a8f
+0.3.0 google_drive:>= 0.3.0|checksum:1ff5adf57fe905c7006ec9a8cf591fddb5ea55b2161707b5bd67a52337fc4908
+0.3.1 google_drive:>= 0.3.0|checksum:d1a7bb8707629955bb20ade0f0be04b2db85a9a1d402817bf6fb1ad87ef3b8c2

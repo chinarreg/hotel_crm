@@ -1,0 +1,7 @@
+:concurrency: <%= ENV.fetch("SIDEKIQ_CONCURRENCY", 10) %>
+:max_retries: 12
+:queues:
+  - [critical, 5]
+  - [default, 3]
+  - [low, 1]
+:timeout: 25

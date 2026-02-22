@@ -1,0 +1,37 @@
+<h1 class="h4 mb-3"><%= @campaign.name %></h1>
+<p><strong>Audience:</strong> <%= @campaign.audience_type.humanize %></p>
+<p><strong>Status:</strong> <span class="badge text-bg-secondary"><%= @campaign.status %></span></p>
+<p><strong>Template:</strong> <%= @campaign.template_name %></p>
+<p><strong>Total:</strong> <%= @campaign.total_recipients %> | <strong>Sent:</strong> <%= @campaign.sent_count %> | <strong>Failed:</strong> <%= @campaign.failed_count %></p>
+<% if @campaign.last_error.present? %>
+  <div class="alert alert-danger"><strong>Last Error:</strong> <%= @campaign.last_error %></div>
+<% end %>
+
+<h2 class="h5 mt-4">Recipients</h2>
+<div class="table-responsive">
+  <table class="table table-striped align-middle">
+    <thead>
+      <tr>
+        <th>Phone</th>
+        <th>Name</th>
+        <th>Source</th>
+        <th>Status</th>
+        <th>Attempts</th>
+        <th>Error</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipients.each do |recipient| %>
+        <tr>
+          <td><%= recipient.phone %></td>
+          <td><%= recipient.full_name %></td>
+          <td><%= recipient.source_type %></td>
+          <td><span class="badge text-bg-secondary"><%= recipient.status %></span></td>
+          <td><%= recipient.attempt_count %></td>
+          <td><%= recipient.last_error %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%== simple_pagination(@pagination) if @pagination %>

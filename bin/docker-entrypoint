@@ -1,0 +1,15 @@
+#!/bin/bash -e
+
+# Enable jemalloc for reduced memory usage and latency.
+if [ -z "${LD_PRELOAD+x}" ]; then
+    LD_PRELOAD=$(find /usr/lib -name libjemalloc.so.2 -print -quit)
+    export LD_PRELOAD
+fi
+
+# Optional: run database prepare on container boot only when explicitly enabled.
+# Default is off since Fly release_command handles migrations.
+if [ "${RUN_DB_PREPARE:-false}" = "true" ]; then
+  ./bin/rails db:prepare
+fi
+
+exec "${@}"

@@ -1,0 +1,25 @@
+<h1 class="h4 mb-3">Guest Imports</h1>
+
+<%= form_with url: admin_guest_stays_path, method: :get, local: true, class: "row g-2 mb-3" do |f| %>
+  <div class="col-12 col-md-10"><%= f.text_field :q, value: params[:q], class: "form-control", placeholder: "Search guest name, email, phone" %></div>
+  <div class="col-12 col-md-2 d-grid"><%= f.submit "Filter", class: "btn btn-outline-secondary" %></div>
+<% end %>
+
+<div class="table-responsive">
+  <table class="table table-striped align-middle">
+    <thead><tr><th>Name</th><th>Phone</th><th>Email</th><th>Check-in</th><th>Imported At</th><th></th></tr></thead>
+    <tbody>
+      <% @guest_stays.each do |guest| %>
+        <tr>
+          <td><%= guest.full_name %></td>
+          <td><%= guest.phone %></td>
+          <td><%= guest.email %></td>
+          <td><%= guest.checkin_date %></td>
+          <td><%= l(guest.imported_at, format: :short) %></td>
+          <td class="text-end"><%= link_to "View", admin_guest_stay_path(guest), class: "btn btn-sm btn-outline-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%== simple_pagination(@pagination) if @pagination %>

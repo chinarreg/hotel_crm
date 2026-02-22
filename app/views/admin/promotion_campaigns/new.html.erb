@@ -1,0 +1,32 @@
+<h1 class="h4 mb-3">New Promotion Campaign</h1>
+
+<%= form_with model: [:admin, @campaign], class: "row g-3", multipart: true do |f| %>
+  <div class="col-12 col-md-6">
+    <%= f.label :name, class: "form-label" %>
+    <%= f.text_field :name, class: "form-control", required: true %>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <%= f.label :template_name, class: "form-label" %>
+    <%= f.text_field :template_name, class: "form-control", required: true %>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <%= f.label :audience_type, class: "form-label" %>
+    <%= f.select :audience_type, PromotionCampaign.audience_types.keys.map { |k| [k.humanize, k] }, {}, class: "form-select" %>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <%= f.label :contacts_file, "Contacts File (CSV/Excel for custom upload)", class: "form-label" %>
+    <%= f.file_field :contacts_file, class: "form-control", accept: ".csv,.xls,.xlsx" %>
+  </div>
+
+  <div class="col-12">
+    <%= f.label :variables_input, "Variables (comma separated)", class: "form-label" %>
+    <%= f.text_field :variables_input, class: "form-control", placeholder: "Hello {{name}},Offer ends soon" %>
+  </div>
+
+  <div class="col-12">
+    <%= f.submit "Create and Queue", class: "btn btn-primary" %>
+  </div>
+<% end %>

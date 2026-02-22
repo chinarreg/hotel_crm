@@ -1,0 +1,9 @@
+<h1 class="h4">Purchase #<%= @purchase.id %></h1>
+<p><strong>Member:</strong> <%= @purchase.member.full_name %></p>
+<p><strong>Amount:</strong> <%= number_to_currency(@purchase.amount) %></p>
+<p><strong>Date:</strong> <%= @purchase.purchased_on %></p>
+<p><strong>Payment Mode:</strong> <%= @purchase.payment_mode %></p>
+<div class="d-flex gap-2">
+  <%= link_to "Edit", edit_admin_purchase_path(@purchase), class: "btn btn-primary" %>
+  <%= button_to "Delete", admin_purchase_path(@purchase), method: :delete, data: { turbo_confirm: "Delete this purchase?" }, class: "btn btn-outline-danger" %>
+</div>
