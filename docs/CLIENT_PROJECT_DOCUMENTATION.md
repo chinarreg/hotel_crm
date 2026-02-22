@@ -282,6 +282,7 @@ Minimum expected vars:
 - `BASIC_AUTH_PASSWORD`
 
 Recommended:
+- `BACKGROUND_JOBS_ENABLED=true`
 - `WHATSAPP_PROVIDER=meta`
 - `WHATSAPP_RATE_LIMIT_PER_MINUTE=60`
 - `WHATSAPP_OPEN_TIMEOUT=5`
@@ -306,6 +307,15 @@ For DigitalOcean migration:
 - Reuse same container image pattern
 - Set same env vars and managed PostgreSQL/Redis URLs
 - No application code changes required
+
+Demo mode for Render free:
+- Set `BACKGROUND_JOBS_ENABLED=false` to run without Sidekiq worker.
+- Campaigns are saved as draft and not enqueued.
+- Admin UI shows a warning banner that background jobs are disabled.
+
+Foreground demo processing mode:
+- Set `BACKGROUND_JOBS_ENABLED=false` and `SYNC_PROCESSING=true`.
+- Promotion campaigns are processed immediately in the web request (no Sidekiq required).
 
 ## 18. Test Coverage and Quality Status
 Current automated test suite includes:

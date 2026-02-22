@@ -36,6 +36,11 @@
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       <% end %>
+      <% unless background_jobs_enabled? %>
+        <div class="alert alert-warning" role="alert">
+          Demo mode is active. Background jobs are disabled, so imports and campaigns will not process automatically.
+        </div>
+      <% end %>
 
       <div class="row g-3">
         <aside class="col-lg-2 d-none d-lg-block">
@@ -48,7 +53,9 @@
             <%= link_to "Import Runs", admin_import_runs_path, class: "list-group-item list-group-item-action" %>
             <%= link_to "Promotion Campaigns", admin_promotion_campaigns_path, class: "list-group-item list-group-item-action" %>
             <%= link_to "Settings", edit_admin_settings_path, class: "list-group-item list-group-item-action" %>
-            <%= link_to "Sidekiq", "/sidekiq", class: "list-group-item list-group-item-action" %>
+            <% if background_jobs_enabled? %>
+              <%= link_to "Sidekiq", "/sidekiq", class: "list-group-item list-group-item-action" %>
+            <% end %>
           </div>
         </aside>
 
@@ -67,7 +74,9 @@
               <%= link_to "Import Runs", admin_import_runs_path, class: "list-group-item list-group-item-action" %>
               <%= link_to "Promotion Campaigns", admin_promotion_campaigns_path, class: "list-group-item list-group-item-action" %>
               <%= link_to "Settings", edit_admin_settings_path, class: "list-group-item list-group-item-action" %>
-              <%= link_to "Sidekiq", "/sidekiq", class: "list-group-item list-group-item-action" %>
+              <% if background_jobs_enabled? %>
+                <%= link_to "Sidekiq", "/sidekiq", class: "list-group-item list-group-item-action" %>
+              <% end %>
             </div>
           </div>
         </div>

@@ -2,6 +2,15 @@ require "sidekiq/api"
 
 class HealthController < ActionController::API
   def sidekiq
+    unless RuntimeMode.background_jobs_enabled?
+      render json: {
+        status: "disabled",
+        message: "Background jobs are disabled in demo mode",
+        timestamp: Time.current.utc.iso8601
+      }
+      return
+    end
+
     redis_info = Sidekiq.redis { |conn| conn.ping }
     latency = Sidekiq::Queue.new("default").latency
 

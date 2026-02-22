@@ -22,14 +22,21 @@ module Admin
 
     def create
       @campaign = PromotionCampaign.new(campaign_params)
-      @campaign.status = :queued
+      @campaign.status = initial_campaign_status
       @campaign.variables = parse_variables(params.dig(:promotion_campaign, :variables_input))
       @campaign.source_file = params.dig(:promotion_campaign, :contacts_file)&.original_filename
 
       if @campaign.save
         PromotionCampaigns::BuildRecipientsService.new(campaign: @campaign, upload_io: params.dig(:promotion_campaign, :contacts_file)).call
-        ProcessPromotionCampaignJob.perform_async(@campaign.id)
-        redirect_to admin_promotion_campaign_path(@campaign), notice: "Campaign queued successfully."
+        if RuntimeMode.background_jobs_enabled?
+          ProcessPromotionCampaignJob.perform_async(@campaign.id)
+          redirect_to admin_promotion_campaign_path(@campaign), notice: "Campaign queued successfully."
+        elsif RuntimeMode.sync_processing_enabled?
+          ProcessPromotionCampaignJob.new.perform(@campaign.id)
+          redirect_to admin_promotion_campaign_path(@campaign), notice: "Campaign processed synchronously."
+        else
+          redirect_to admin_promotion_campaign_path(@campaign), alert: "Background jobs are disabled. Campaign saved as draft and not queued."
+        end
       else
         render :new, status: :unprocessable_entity
       end
@@ -52,6 +59,12 @@ module Admin
       return [] if input.blank?
 
       input.to_s.split(",").map(&:strip)
+    end
+
+    def initial_campaign_status
+      return :queued if RuntimeMode.background_jobs_enabled? || RuntimeMode.sync_processing_enabled?
+
+      :draft
     end
   end
 end

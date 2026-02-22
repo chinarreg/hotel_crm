@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   get "health/sidekiq" => "health#sidekiq"
 
-  mount Sidekiq::Web => "/sidekiq"
+  mount Sidekiq::Web => "/sidekiq" if RuntimeMode.background_jobs_enabled?
 
   namespace :admin do
     root "dashboard#index"

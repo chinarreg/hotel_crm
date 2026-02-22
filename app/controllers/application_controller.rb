@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
   before_action :require_basic_authentication
+  helper_method :background_jobs_enabled?
 
   private
 
@@ -27,6 +28,10 @@ class ApplicationController < ActionController::Base
       ::Digest::SHA256.hexdigest(input.to_s),
       ::Digest::SHA256.hexdigest(expected.to_s)
     )
+  end
+
+  def background_jobs_enabled?
+    RuntimeMode.background_jobs_enabled?
   end
 
   def paginate_scope(scope, per_page: 20)
