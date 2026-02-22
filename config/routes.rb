@@ -32,8 +32,12 @@ Rails.application.routes.draw do
     resources :vouchers
     resources :purchases
     resources :guest_stays, only: %i[index show]
-    resources :import_runs, only: %i[index show]
-    resources :promotion_campaigns, only: %i[index show new create]
+    resources :import_runs, only: %i[index show] do
+      post :trigger_imap, on: :collection
+    end
+    resources :promotion_campaigns, only: %i[index show new create] do
+      post :process_now, on: :member
+    end
     resource :settings, only: %i[edit update]
   end
 

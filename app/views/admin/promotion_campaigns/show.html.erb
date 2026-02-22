@@ -1,4 +1,20 @@
 <h1 class="h4 mb-3"><%= @campaign.name %></h1>
+<% if !background_jobs_enabled? && RuntimeMode.sync_processing_enabled? %>
+  <div class="mb-3">
+    <%= form_with url: process_now_admin_promotion_campaign_path(@campaign), method: :post, class: "d-inline" do %>
+      <button type="submit" class="btn btn-primary btn-sm" data-loading-button data-loading-text="Processing Campaign...">
+        <span class="loading-spinner spinner-border spinner-border-sm me-1 d-none" role="status" aria-hidden="true"></span>
+        <span class="loading-label">Process Now</span>
+      </button>
+    <% end %>
+  </div>
+<% elsif !background_jobs_enabled? %>
+  <div class="mb-3">
+    <button type="button" class="btn btn-outline-secondary btn-sm" disabled>
+      Enable SYNC_PROCESSING to Process Campaign
+    </button>
+  </div>
+<% end %>
 <p><strong>Audience:</strong> <%= @campaign.audience_type.humanize %></p>
 <p><strong>Status:</strong> <span class="badge text-bg-secondary"><%= @campaign.status %></span></p>
 <p><strong>Template:</strong> <%= @campaign.template_name %></p>

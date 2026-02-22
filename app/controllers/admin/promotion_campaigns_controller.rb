@@ -1,6 +1,6 @@
 module Admin
   class PromotionCampaignsController < BaseController
-    before_action :set_campaign, only: %i[show]
+    before_action :set_campaign, only: %i[show process_now]
 
     def index
       scope = PromotionCampaign.order(created_at: :desc)
@@ -43,6 +43,24 @@ module Admin
     rescue StandardError => e
       flash.now[:alert] = "Unable to create campaign: #{e.message}"
       render :new, status: :unprocessable_entity
+    end
+
+    def process_now
+      if RuntimeMode.background_jobs_enabled?
+        ProcessPromotionCampaignJob.perform_async(@campaign.id)
+        redirect_to admin_promotion_campaign_path(@campaign), notice: "Campaign queued successfully."
+        return
+      end
+
+      unless RuntimeMode.sync_processing_enabled?
+        redirect_to admin_promotion_campaign_path(@campaign), alert: "Background jobs are disabled. Enable sync processing for manual processing."
+        return
+      end
+
+      ProcessPromotionCampaignJob.new.perform(@campaign.id)
+      redirect_to admin_promotion_campaign_path(@campaign), notice: "Campaign processed successfully."
+    rescue StandardError => e
+      redirect_to admin_promotion_campaign_path(@campaign), alert: "Manual campaign processing failed: #{e.message}"
     end
 
     private
