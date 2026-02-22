@@ -11,14 +11,13 @@
   </head>
 
   <body class="bg-body-tertiary">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm border-bottom">
       <div class="container-fluid">
         <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#adminSidebar" aria-controls="adminSidebar">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <%= link_to admin_root_path, class: "navbar-brand fw-semibold d-flex align-items-center gap-2" do %>
-          <%= image_tag "/reserved_logo.png", alt: "Reserved Logo", class: "rounded-circle bg-white p-1 border border-light-subtle", style: "width: 44px; height: 44px; object-fit: cover;" %>
-          <span>Radisson Blu Nagpur CRM</span>
+        <%= link_to admin_root_path, class: "navbar-brand d-flex align-items-center" do %>
+          <%= image_tag "/reserved_logo.png", alt: "Reserved Logo", class: "rounded", style: "height: 52px; width: auto; max-width: 46px; object-fit: contain;" %>
         <% end %>
       </div>
     </nav>
